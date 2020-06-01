@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Sample Screen</p>
+    <input type="text" id="field"/>
+    <button type="button" id="add" onclick="addElem()">Add</button>
+    <button type="button" id="display" onclick="displayElem()">Display</button>
+    <div id="result"></div>
+    <script>
+        let x = 0;
+        let array = Array();
+        function addElem(){
+            array[x] = document.getElementById('field').value;
+            alert(`Element ${array[x]} Added at inđex ${x}`);
+            x++;
+            document.getElementById('field').value = "";
+        }
+        function displayElem(){
+            let e = "<hr/>";
+            for (let i=0; i < array.length; i++){
+                e += "Element" + i + "=" + array[i] + "<br/>";
+            }
+            document.getElementById('result').innerHTML = e;
+        }
+    </script>
+</body>
+</html>
